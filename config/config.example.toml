@@ -1,0 +1,45 @@
+[paths]
+site_metadata = "/Users/yongzhe/Documents/Reading/jules implementation/site info for biome analysis.csv"
+site_ai = "/Users/yongzhe/Documents/Reading/jules implementation/site_ai.csv"
+
+# NetCDF directories. The met/obs directory stores files directly under root;
+# model directories store files under one directory per site.
+met_root = "/Volumes/disk/met"
+obs_root = "/Volumes/disk/flux evaluation"
+pmodel_root = "/Volumes/disk/pmodel_test_gl/output_GAL9"
+multilayer_root = "/Volumes/disk/multi_layers/output_GAL9"
+multi13_root = "/Volumes/disk/multi_13/output_PL2_example"
+
+processed_dir = "data/processed"
+tables_dir = "tables"
+figures_dir = "figures"
+
+[site_selection]
+site_column = "Site"
+exclude_sites = [
+  "US-Ne1", "US-Ne2", "US-Ne3", "AU-Tum", "US-MMS", "AU-Cow",
+  "US-PFa", "US-Ha1", "US-Cop", "AU-Otw", "US-UMB"
+]
+
+[time_alignment]
+obs_shift_minutes = 0
+met_shift_minutes = 0
+pmodel_shift_minutes = 30
+multilayer_shift_minutes = 30
+multi13_shift_minutes = 30
+
+[unit_conversions]
+# JULES GPP in kg C m-2 s-1 to g C m-2 d-1.
+model_gpp_factor = 86400000.0
+
+# FLUXNET GPP in umol CO2 m-2 s-1 to g C m-2 d-1.
+obs_gpp_factor = 1.0368
+
+[models]
+obs = "obs"
+pmodel = "pmodel"
+multilayer = "multi"
+multi13 = "multi13"
+
+[figures]
+dpi = 300
